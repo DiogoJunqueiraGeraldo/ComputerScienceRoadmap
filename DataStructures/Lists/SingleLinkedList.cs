@@ -193,8 +193,20 @@
             Size--;
         }
 
-        // Search
+        public T ValueAt(uint index)
+        {
+            if(index < 1 || index > Size)
+            {
+                throw new IndexOutOfRangeException("Out of bounds");
+            }
+
+            var curr = FindAt(index);
+            return curr.Value;
+        }
+
         // Sort
+        // moves
+        // LRU
     }
 
     /// <summary>
