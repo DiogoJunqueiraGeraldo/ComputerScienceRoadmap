@@ -1,13 +1,13 @@
 ﻿using DataStructures.Lists;
 
-namespace UnitTests.DataStructures.Lists.SingleLinkedList
+namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
     public class Reverse
     {
         [Fact]
         public void SLLCanReverseTheListValues()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(3);
             sll.InsertAtEnd(2);
@@ -21,7 +21,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLWontReverseAListWithLessThanTwoElements()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             var emptyList = sll.ToArray();
             sll.Reverse();

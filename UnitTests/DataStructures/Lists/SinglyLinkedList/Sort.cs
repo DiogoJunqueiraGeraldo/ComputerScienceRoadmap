@@ -1,16 +1,17 @@
 ﻿using DataStructures.Lists;
 
-namespace UnitTests.DataStructures.Lists.SingleLinkedList
+namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
     public class Sort
     {
         [Fact]
         public void SLLWontSortOnEmptyLists()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
 
             var beforeSort = sll.ToArray();
+
 
             sll.Sort(null);
 
@@ -20,7 +21,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanSort()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(3);
             sll.InsertAtEnd(1);

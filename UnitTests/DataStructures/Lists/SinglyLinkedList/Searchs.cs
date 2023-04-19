@@ -1,13 +1,13 @@
 ﻿using DataStructures.Lists;
 
-namespace UnitTests.DataStructures.Lists.SingleLinkedList
+namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
     public class Searchs
     {
         [Fact]
         public void SLLCanSearchValueByPosition()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -23,7 +23,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLThrowsIndexOutOfRangeExceptionToAvoidNullReturnsOnZeroIndexSearch()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -37,7 +37,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLThrowsIndexOutOfRangeExceptionToAvoidNullReturnOnIndexesGreaterThanTheSize()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);

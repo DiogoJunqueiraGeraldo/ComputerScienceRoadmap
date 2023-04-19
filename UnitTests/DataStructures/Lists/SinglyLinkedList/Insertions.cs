@@ -1,13 +1,13 @@
 ﻿using DataStructures.Lists;
 
-namespace UnitTests.DataStructures.Lists.SingleLinkedList
+namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
     public class Insertions
     {
         [Fact]
         public void SLLCanInsertAtStartOnEmptyList()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtStart(1);
 
@@ -17,7 +17,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanInsertAtStart()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtStart(3);
             sll.InsertAtStart(2);
@@ -29,7 +29,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanInsertAtEndOnEmptyList()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
 
@@ -39,7 +39,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanInsertAtEnd()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -51,8 +51,8 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanInsertAtWhereverOnEmptyList()
         {
-            var sll1 = new SingleLinkedList<int>();
-            var sll2 = new SingleLinkedList<int>();
+            var sll1 = new SinglyLinkedList<int>();
+            var sll2 = new SinglyLinkedList<int>();
 
             sll1.InsertAt(uint.MinValue, 1);
             Assert.Equal(new int[] { 1 }, sll1.ToArray());
@@ -64,7 +64,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanInsertAtWillInsertAtStartWithIndexLowerOrEqualToOne()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAt(0, 1);
             Assert.Equal(new int[] { 1 }, sll.ToArray());
@@ -76,7 +76,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLInsertAtWillInsertAtEndWithIndexGreaterOrEqualToSize()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
             sll.InsertAtStart(1);
 
             sll.InsertAt(2, 2);
@@ -89,7 +89,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLInsertAtWillInsertAtIndexAndPushPreviousValueToRight()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(3);

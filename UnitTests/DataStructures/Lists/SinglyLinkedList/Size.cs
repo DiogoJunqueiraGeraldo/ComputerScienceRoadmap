@@ -1,20 +1,20 @@
 ﻿using DataStructures.Lists;
 
-namespace UnitTests.DataStructures.Lists.SingleLinkedList
+namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
     public class Size
     {
         [Fact]
         public void SLLIsCreatedEmpty()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
             Assert.Equal<uint>(0, sll.Size);
             Assert.Equal(new int[] { }, sll.ToArray());
         }
 
         [Fact]
         public void SLLInsertOperationsUpdateTheSize() {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtStart(1);
             Assert.Equal<uint>(1, sll.Size);
@@ -29,7 +29,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLDeleteOperationsUpdateTheSize()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -50,7 +50,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLReverseOperationWontAffectItsSize()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);

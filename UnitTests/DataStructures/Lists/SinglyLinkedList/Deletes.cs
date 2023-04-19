@@ -1,14 +1,14 @@
 ﻿
 using DataStructures.Lists;
 
-namespace UnitTests.DataStructures.Lists.SingleLinkedList
+namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
     public class Deletes
     {
         [Fact]
         public void SLLWontDoAnythingPerformingDeleteOperationsOnAnEmptyList()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.DeleteFirst();
             sll.DeleteLast();
@@ -21,14 +21,14 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLDeleteFirstOrDeleteLastOnListWithOnlyOneElementDoTheSameThing()
         {
-            var sll1 = new SingleLinkedList<int>();
+            var sll1 = new SinglyLinkedList<int>();
 
             sll1.InsertAtEnd(1);
             sll1.DeleteFirst();
 
             Assert.Equal(new int[] { }, sll1.ToArray());
 
-            var sll2 = new SingleLinkedList<int>();
+            var sll2 = new SinglyLinkedList<int>();
 
             sll2.InsertAtEnd(1);
             sll2.DeleteLast();
@@ -39,7 +39,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanDeleteTheFirstElement()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -51,7 +51,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanDeleteTheLastElement()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -63,7 +63,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanDeleteAtSpecifiedIndex()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);
@@ -77,14 +77,14 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanDeleteFirstWhenInputsZeroOrOneToDeleteAt()
         {
-            var sll1 = new SingleLinkedList<int>();
+            var sll1 = new SinglyLinkedList<int>();
             sll1.InsertAtEnd(1);
             sll1.InsertAtEnd(2);
 
             sll1.DeleteAt(0);
             Assert.Equal(new int[] { 2 }, sll1.ToArray());
 
-            var sll2 = new SingleLinkedList<int>();
+            var sll2 = new SinglyLinkedList<int>();
             sll2.InsertAtEnd(1);
             sll2.InsertAtEnd(2);
 
@@ -95,7 +95,7 @@ namespace UnitTests.DataStructures.Lists.SingleLinkedList
         [Fact]
         public void SLLCanDeleteLastWhenInputsAreGreaterOrEqualToTheSizeOfTheList()
         {
-            var sll = new SingleLinkedList<int>();
+            var sll = new SinglyLinkedList<int>();
 
             sll.InsertAtEnd(1);
             sll.InsertAtEnd(2);

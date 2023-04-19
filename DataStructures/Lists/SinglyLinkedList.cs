@@ -1,19 +1,19 @@
 ﻿namespace DataStructures.Lists
 {
-    public class SingleLinkedList<T>
+    public class SinglyLinkedList<T>
     {
-        private SingleLinkedListNode<T>? head;
-        private SingleLinkedListNode<T>? tail;
+        private SinglyLinkedListNode<T>? head;
+        private SinglyLinkedListNode<T>? tail;
         public uint Size { get; private set; }
 
-        public SingleLinkedList()
+        public SinglyLinkedList()
         {
             Size = 0;
             head = null;
             tail = null;
         }
 
-        private SingleLinkedListNode<T>? FindAt(uint index)
+        private SinglyLinkedListNode<T>? FindAt(uint index)
         {
             var curr = head;
             for (uint i = 1; i < index; i++)
@@ -66,7 +66,7 @@
 
         public void InsertAtEnd(T value)
         {
-            var node = new SingleLinkedListNode<T>(value);
+            var node = new SinglyLinkedListNode<T>(value);
 
             if (head is null)
             {
@@ -96,7 +96,7 @@
             {
                 // Insert at a position that is already fulfilled will replace the value at the position
                 // and shift the already existing values to the right
-                var node = new SingleLinkedListNode<T>(value);
+                var node = new SinglyLinkedListNode<T>(value);
                 var curr = FindAt(index -1);
                 var next = curr.Next;
 
@@ -109,7 +109,7 @@
 
         public void InsertAtStart(T value)
         {
-            var node = new SingleLinkedListNode<T>(value);
+            var node = new SinglyLinkedListNode<T>(value);
             node.Next = head;
             head = node;
 
@@ -211,12 +211,12 @@
         }
     }
 
-    internal class SingleLinkedListNode<T>
+    internal class SinglyLinkedListNode<T>
     {
         public T Value { set; get; }
-        public SingleLinkedListNode<T>? Next { get; set; }
+        public SinglyLinkedListNode<T>? Next { get; set; }
 
-        public SingleLinkedListNode(T value, SingleLinkedListNode<T>? next = null)
+        public SinglyLinkedListNode(T value, SinglyLinkedListNode<T>? next = null)
         {
             Value = value;
             Next = next;
