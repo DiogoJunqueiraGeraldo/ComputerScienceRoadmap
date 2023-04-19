@@ -81,32 +81,21 @@
             Size++;
         }
 
-        /// <summary>
-        ///     InsertAt won't accept your index if it doesn't make sense
-        ///     this design decision avoid throwing out of bounds
-        ///     since this don't make sense on a Single Linked List.
-        ///     
-        ///     If there is already a value on the position, it will be pushed to the right.
-        /// </summary>
-        /// <param name="index">the position you want the value to be</param>
-        /// <param name="value">an awesome value</param>
         public void InsertAt(uint index, T value)
         {
             if (index <= 1)
             {
-                // Insert at first position will switch the head
                 InsertAtStart(value);
 
             }
             else if (index > Size)
             {
-                // Insert at a position greater than the list will InsertAtEnd the value at the end
                 InsertAtEnd(value);
             }
             else
             {
-                // Insert at a position that is already fulfilled will 
-                // replace the value at the position and shift the already existing values to the right
+                // Insert at a position that is already fulfilled will replace the value at the position
+                // and shift the already existing values to the right
                 var node = new SingleLinkedListNode<T>(value);
                 var curr = FindAt(index -1);
                 var next = curr.Next;
@@ -132,17 +121,6 @@
             Size++;
         }
 
-        /// <summary>
-        ///     DeleteAt won't accept your index if it doesn't make sense
-        ///     this design decision avoid throwing out of bounds
-        ///     since this don't make sense on a Single Linked List.
-        ///     
-        ///     Deleting on position 0 or 1 will delete the first element,
-        ///     Deleting on a position greater than the size will delete the last element
-        ///     
-        ///     Be careful
-        /// </summary>
-        /// <param name="index">the position you want the value to be</param>
         public void DeleteAt(uint index)
         {
             if (index <= 1)
@@ -204,18 +182,38 @@
             return curr.Value;
         }
 
-        // Sort
-        // moves
-        // LRU
+        /// <param name="isGreaterThan">Returns if the first param is greater than the second</param>
+        public void Sort(Func<T, T, bool> isGreaterThan)
+        {
+            if(head == null)
+            {
+                return;
+            }
+
+            var curr = head;
+
+            while(curr != null)
+            {
+                var aux = curr.Next;
+
+                while(aux != null)
+                {
+                    if(isGreaterThan(curr.Value, aux.Value))
+                    {
+                        var tmp = curr.Value;
+                        curr.Value = aux.Value;
+                        aux.Value = tmp;
+                    }
+                    aux = aux.Next;
+                }
+                curr = curr.Next;
+            }
+        }
     }
 
-    /// <summary>
-    /// Reference: https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0
-    /// </summary>
-    /// <typeparam name="T">List generic data type</typeparam>
     internal class SingleLinkedListNode<T>
     {
-        public T Value { init; get; }
+        public T Value { set; get; }
         public SingleLinkedListNode<T>? Next { get; set; }
 
         public SingleLinkedListNode(T value, SingleLinkedListNode<T>? next = null)
