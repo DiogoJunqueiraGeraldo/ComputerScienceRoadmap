@@ -183,7 +183,8 @@
         }
 
         /// <param name="isGreaterThan">Returns if the first param is greater than the second</param>
-        public void Sort(Func<T, T, bool> isGreaterThan)
+        /// <param name="asc">Sort in ascending order</param>
+        public void Sort(Func<T, T, bool> isGreaterThan, bool asc = true)
         {
             if(head == null)
             {
@@ -198,7 +199,8 @@
 
                 while(aux != null)
                 {
-                    if(isGreaterThan(curr.Value, aux.Value))
+                    var gt = isGreaterThan(curr.Value, aux.Value);
+                    if ((asc)? gt : !gt)
                     {
                         var tmp = curr.Value;
                         curr.Value = aux.Value;
