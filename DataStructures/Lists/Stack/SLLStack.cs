@@ -1,15 +1,17 @@
-﻿namespace DataStructures.Lists
+﻿namespace DataStructures.Lists.Stack
 {
     public class SLLStack<T>
     {
         private SinglyLinkedList<T> _sll;
 
         // virtual size
-        public uint Size {
+        public uint Size
+        {
             get => _sll.Size;
         }
-        
-        public SLLStack() {
+
+        public SLLStack()
+        {
             _sll = new SinglyLinkedList<T>();
         }
 
@@ -18,8 +20,9 @@
             _sll.InsertAtStart(value);
         }
 
-        public T Peek() {
-            if(IsEmpty())
+        public T Peek()
+        {
+            if (IsEmpty())
             {
                 throw new IndexOutOfRangeException("Can't peek an empty stack");
             }
@@ -29,7 +32,7 @@
 
         public T? Pop()
         {
-            if(IsEmpty())
+            if (IsEmpty())
             {
                 throw new IndexOutOfRangeException("Can't pop an empty stack");
             }

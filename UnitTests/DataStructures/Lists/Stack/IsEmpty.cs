@@ -1,4 +1,4 @@
-﻿using DataStructures.Lists;
+﻿using DataStructures.Lists.Stack;
 
 namespace UnitTests.DataStructures.Lists.Stack
 {
@@ -32,6 +32,37 @@ namespace UnitTests.DataStructures.Lists.Stack
             Assert.Throws<IndexOutOfRangeException>(() =>
             {
                 slls.Peek();
+            });
+        }
+
+        [Fact]
+        public void ArrayStackInitializeEmpty()
+        {
+            var arrs = new ArrayStack<int>();
+
+            Assert.True(arrs.IsEmpty());
+            Assert.Equal<uint>(0, arrs.Size);
+        }
+
+        [Fact]
+        public void ArrayStackThrowsExceptionWhenTryingToPopWhenItsEmpty()
+        {
+            var arrs = new ArrayStack<int>();
+
+            Assert.Throws<IndexOutOfRangeException>(() =>
+            {
+                arrs.Pop();
+            });
+        }
+
+        [Fact]
+        public void ArrayStackThrowsExceptionWhenTryingToPeekpWhenItsEmpty()
+        {
+            var arrs = new ArrayStack<int>();
+
+            Assert.Throws<IndexOutOfRangeException>(() =>
+            {
+                arrs.Peek();
             });
         }
     }
