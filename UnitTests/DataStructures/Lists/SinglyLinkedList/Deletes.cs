@@ -1,5 +1,4 @@
-﻿
-using DataStructures.Lists;
+﻿using DataStructures.Lists;
 
 namespace UnitTests.DataStructures.Lists.SinglyLinkedList
 {
