@@ -9,7 +9,7 @@
 	- [x] [Stack - Array](DataStructures/Lists/Stack/ArrayStack.cs)
 
  - [ ] Queues
-	- [x] [Queue - SLL](DataStructures/Lists/Queue/SLLStack.cs)
+	- [x] [Queue - SLL](DataStructures/Lists/Queue/SLLQueue.cs)
 	- [ ] Queue - Array
  
  - [ ] Hash Table
